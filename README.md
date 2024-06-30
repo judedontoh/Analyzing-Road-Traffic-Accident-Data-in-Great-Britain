@@ -1,3 +1,52 @@
-# Analyzing-Road-Traffic-Accident-Data-in-Great-Britain
+# UK Road Accident Analysis
 
-This project focuses on analyzing road traffic accident data from Great Britain to understand patterns and improve road safety strategies. Using SQL, data from four tables—accident, vehicle, casualty, and lsoa—was extracted from the 2020 accident database. The analysis revealed that accidents peak during the hours of 15:00-17:00 and 08:00, coinciding with typical commuting times, and Fridays have the highest accident frequency. Specific patterns were identified for different vehicle types, with motorcycles showing distinct accident trends based on engine capacity and day of the week. Pedestrian accidents also exhibited peak times in the morning and afternoon. Data cleaning involved addressing missing and outlier values using Python's Pandas library. The Apriori algorithm was employed to explore the impact of various factors on accident severity, uncovering significant associations that inform targeted road safety interventions. The clustering analysis using KMeans and DBScan identified accident hotspots in the Yorkshire and the Humber region, providing insights into geographic accident distribution. Predictive models, including Decision Tree, k-Nearest Neighbors, Naive Bayes, and a Stacking Classifier, were developed to predict fatal injuries, with the Stacking Classifier achieving the highest accuracy. These findings offer valuable recommendations for government agencies to allocate resources efficiently, improve accident-prone zones, and develop data-driven policies to enhance road safety.
+## Project Overview
+This project analyzes road traffic accident data from Great Britain for the year 2020. The objective is to identify patterns and propose strategies to enhance road safety. The analysis includes data exploration, cleaning, visualization, statistical analysis, and predictive modeling.
+
+## Motivation
+Understanding the patterns and causes of road traffic accidents is critical for improving road safety. This project aims to leverage data analysis and machine learning techniques to uncover insights that can inform better safety measures and policies.
+
+## Data Collection
+The data includes records from four tables: accidents, vehicles, casualties, and LSOA for the year 2020. The dataset was sourced from the UK government’s open data portal.
+
+## Code and Resources Used
+- **Python Version**: 3.8
+- **Packages**: pandas, matplotlib, seaborn, scikit-learn
+- **Requirements**: `pip install -r requirements.txt`
+
+## Data Exploration
+```python
+import pandas as pd
+
+# Load the accident data
+accidents = pd.read_csv('data/accident_data.csv')
+```
+### Data Cleaning
+```python
+from src.data_preprocessing import clean_data
+
+# Clean the accident data
+cleaned_accidents = clean_data(accidents)
+
+```
+## Data Visualization
+
+
+### Plot the distribution of accidents
+```python
+plot_accidents(cleaned_accidents)
+Statistical Analysis
+
+from src.statistical_analysis import analyze_data
+```
+### Perform statistical analysis
+```python
+analysis_results = analyze_data(cleaned_accidents)
+Predictive Modeling
+from src.predictive_modeling import build_model
+
+```
+### Build and evaluate a predictive model
+```python
+model, evaluation = build_model(cleaned_accidents)
+```
